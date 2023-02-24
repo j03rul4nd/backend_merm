@@ -19,7 +19,7 @@ export async function startApolloServer(typeDefs, resolvers){
     const Port_url = process.env.PORT;
     
     //app.use('/graphql', cors(), express.json(), expressMiddleware(server))
-    app.use(Port_url, cors(), express.json(), expressMiddleware(server))
+    app.use('/graphql', cors(), express.json(), expressMiddleware(server))
 
     expressMiddleware(server);
     const Server_url = "backendmerm-production.up.railway.app"
