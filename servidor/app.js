@@ -20,8 +20,8 @@ export async function startApolloServer(typeDefs, resolvers){
     app.use('/graphql', cors(), express.json(), expressMiddleware(server))
 
     expressMiddleware(server);
-
-    await new Promise(resolve => httpServer.listen({port: process.env.PORT}, resolve))
-    console.log(`🌐 Server ready at http://localhost:${process.env.PORT}/graphql`)
+    const Port_url = process.env.PORT
+    await new Promise(resolve => httpServer.listen({port: Port_url}, resolve))
+    console.log(`🌐 Server ready at https://backendmerm-production.up.railway.app:${Port_url}/graphql`)
 }
  
